@@ -7,7 +7,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.2'
 gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.6'
+
 gem 'bootstrap', '~> 4.3.1'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -38,7 +38,7 @@ gem 'hirb', '~> 0.7.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3', '~> 1.3.6'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -57,6 +57,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'pg', '~> 1.1', '>= 1.1.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
